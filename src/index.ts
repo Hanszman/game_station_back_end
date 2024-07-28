@@ -2,7 +2,7 @@ import express from 'express';
 import { connectToDatabase } from './database/db';
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const host = process.env.HOST || 'http://localhost';
 
 app.get('/', async (req, res) => {

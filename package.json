@@ -1,6 +1,6 @@
 {
   "name": "game_station_back_end",
-  "version": "1.0.0",
+  "version": "16.17.0",
   "description": "Online Game Station Developed in Node.js (BackEnd)",
   "main": "index.js",
   "scripts": {

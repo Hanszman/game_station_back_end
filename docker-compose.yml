@@ -2,14 +2,14 @@ services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "3001:3001"
     volumes:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     environment:
       - NODE_ENV=development
       - HOST=http://localhost
-      - PORT=3000
+      - PORT=3001
       - DB_HOST=mysql
       - DB_PORT=3306
       - DB_USER=root
