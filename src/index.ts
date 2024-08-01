@@ -1,9 +1,13 @@
 import express from 'express';
+import cors from 'cors';
 import http from 'http';
+import dotenv from 'dotenv';
+import router from './routes/apiRoutes';
 import { Server } from 'socket.io';
-import { connectToDatabase } from './database/db';
 
 const app = express();
+app.use(cors());
+dotenv.config();
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
@@ -16,16 +20,7 @@ const io = new Server(server, {
 const port = process.env.PORT || 3001;
 const host = process.env.HOST || 'http://localhost';
 
-app.get('/', async (req, res) => {
-    try {
-        const connection = await connectToDatabase();
-        const [rows] = await connection.execute('SELECT 1 + 1 AS solution');
-        res.json(rows);
-    } catch (error: any) {
-        res.status(500).send(error.message);
-    }
-});
-
+app.use('/', router);
 io.on('connection', (socket: any) => {
     console.log(`Socket conectado: ${socket.id}`);
 });
