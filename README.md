@@ -134,7 +134,7 @@ app.listen(port, () => {
 ## Configuração do Jest e dos Testes:
 Configure Jest criando um arquivo jest.config.js na raiz do projeto. Por exemplo:
 
-module.exports = {
+export default {
   preset: 'ts-jest',
   testEnvironment: 'node',
   testMatch: ['**/tests/**/*.test.ts'],

@@ -8,17 +8,18 @@ import { Server } from 'socket.io';
 const app = express();
 app.use(cors());
 dotenv.config();
+const port = process.env.PORT || 3001;
+const host = process.env.HOST || 'http://localhost';
+const webApp = process.env.WEB_APP || 'http://localhost:3000';
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: 'http://localhost:3000',
+        origin: webApp,
         methods: ['GET', 'POST', 'PUT', 'DELETE'],
         allowedHeaders: ['my-custom-header'],
         credentials: true
     }
-})
-const port = process.env.PORT || 3001;
-const host = process.env.HOST || 'http://localhost';
+});
 
 app.use('/', router);
 io.on('connection', (socket: any) => {
