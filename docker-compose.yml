@@ -10,11 +10,12 @@ services:
       - NODE_ENV=development
       - HOST=http://localhost
       - PORT=3001
+      - WEB_APP=http://localhost:3000
       - DB_HOST=mysql
       - DB_PORT=3306
       - DB_USER=root
-      - DB_PASSWORD=password
-      - DB_NAME=mydatabase
+      - DB_PASSWORD=gamestation
+      - DB_NAME=gamestationdb
     command: npm run dev
     depends_on:
       - mysql
@@ -23,8 +24,8 @@ services:
     image: mysql:latest
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: mydatabase
+      MYSQL_ROOT_PASSWORD: gamestation
+      MYSQL_DATABASE: gamestationdb
     ports:
       - "3306:3306"
     volumes:

@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 import router from './routes/apiRoutes';
 import { Server } from 'socket.io';
 
-// TODO: mudar nome e senha do DB
 // TODO: criar tables no DB e ver se vai persistir as informações com o docker
 // TODO: criar sistema de login
 
