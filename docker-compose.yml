@@ -19,6 +19,8 @@ services:
     command: npm run dev
     depends_on:
       - mysql
+    networks:
+      - app-network
 
   mysql:
     image: mysql:latest
@@ -30,6 +32,13 @@ services:
       - "3306:3306"
     volumes:
       - mysql-data:/var/lib/mysql
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
 
 volumes:
   mysql-data:
+    driver: local
