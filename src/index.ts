@@ -5,8 +5,6 @@ import dotenv from 'dotenv';
 import router from './routes/apiRoutes';
 import { Server } from 'socket.io';
 
-// TODO: criar sistema de login
-
 const app = express();
 app.use(cors());
 dotenv.config();

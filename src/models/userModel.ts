@@ -1,0 +1,50 @@
+import { DataTypes, Model } from 'sequelize';
+import sequelize from '../database/db';
+
+class UserModel extends Model {
+  public user_id!: number;
+  public username!: string;
+  public password!: string;
+  public email!: string;
+  public name!: string;
+  public lastname?: string;
+}
+
+UserModel.init(
+  {
+    user_id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false,
+    },
+    username: {
+      type: DataTypes.STRING(200),
+      allowNull: false,
+    },
+    password: {
+      type: DataTypes.STRING(300),
+      allowNull: false,
+    },
+    email: {
+      type: DataTypes.STRING(200),
+      allowNull: false,
+    },
+    name: {
+      type: DataTypes.STRING(100),
+      allowNull: false,
+    },
+    lastname: {
+      type: DataTypes.STRING(300),
+      allowNull: true,
+    },
+  },
+  {
+    sequelize,
+    modelName: 'User',
+    tableName: 'user',
+    timestamps: false,
+  }
+);
+
+export default UserModel;

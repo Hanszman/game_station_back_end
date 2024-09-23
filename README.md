@@ -26,7 +26,7 @@ Execute os comandos no terminal:
 ### `npm install dotenv`
 ### `npm install sequelize sequelize-typescript @types/sequelize`
 ou
-### `npm install express jest ts-jest typescript ts-node @types/node @types/express @types/jest nodemon dotenv mysql2 sequelize sequelize-typescript`
+### `npm install express jest ts-jest typescript ts-node @types/node @types/express @types/jest nodemon dotenv mysql2 sequelize sequelize-typescript @types/sequelize`
 
 ## Configuração do TypeScript:
 Crie um arquivo tsconfig.json na raiz do seu projeto com a configuração do TypeScript. Por exemplo:
