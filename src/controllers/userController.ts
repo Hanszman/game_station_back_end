@@ -1,11 +1,14 @@
 import { Request, Response } from 'express';
 import handleEndpoint from '../utils/handleEndpoint';
 import UserModel from '../models/userModel';
+import QueryOptions from '../utils/classes/QueryOptions';
 
 const readUser = async (req: Request, res: Response): Promise<void> => {
     return handleEndpoint(req, res, async (req) => {
         const id = req?.params?.id;
         const queryParams = req?.query;
+        const queryOptions = new QueryOptions<UserModel>();
+        console.log('queryOptions', queryOptions);
         if (id) {
             return await UserModel.findByPk(id);
         } else {

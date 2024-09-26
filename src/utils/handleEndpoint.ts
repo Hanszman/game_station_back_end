@@ -8,14 +8,16 @@ const handleEndpoint = async (
     let result: any;
     let status: number = 200;
     let error: boolean = false;
+    let message: string = 'Success!';
     try {
         result = await callback(req);
     } catch (err: any) {
+        result = null;
         status = 500;
         error = true;
-        result = err.message;
+        message = err.message;
     }
-    res.status(status).json({ error, data: result });
+    res.status(status).json({ error, data: result, message });
 };
 
 export default handleEndpoint;
