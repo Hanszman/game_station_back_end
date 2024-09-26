@@ -1,18 +1,17 @@
 import { Request, Response } from 'express';
+import handleEndpoint from '../utils/handleEndpoint';
 import UserModel from '../models/userModel';
 
 const readUser = async (req: Request, res: Response): Promise<void> => {
-    let result: any;
-    let status: number = 200;
-    let error: boolean = false;
-    const id = req?.params?.id;
-    const queryParams = req?.query;
-    if (id) {
-        result = await UserModel.findByPk(id);
-    } else {
-        result = await UserModel.findAll();
-    }
-    res.status(status).json({error, data: result});
+    return handleEndpoint(req, res, async (req) => {
+        const id = req?.params?.id;
+        const queryParams = req?.query;
+        if (id) {
+            return await UserModel.findByPk(id);
+        } else {
+            return await UserModel.findAll();
+        }
+    });
 }
 
 const createUser = async (req: Request, res: Response): Promise<void> => {
