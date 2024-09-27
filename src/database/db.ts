@@ -20,12 +20,13 @@ export async function connectToDatabase() {
         await sequelize.authenticate();
         console.log('Connected to the database');
         await sequelize.sync({ force: false });
-        console.log('Modelos sincronizados');
+        console.log('Models sincronized');
         return sequelize;
     } catch (error) {
         console.error('Error connecting to the database:', error);
         throw error;
     }
 };
+connectToDatabase();
 
 export default sequelize;
