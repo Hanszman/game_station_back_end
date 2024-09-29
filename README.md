@@ -234,6 +234,11 @@ ou
 
 E acessar o servidor em http://localhost:3001.
 
+## Para finalizar o container da aplicação:
+Caso precise que o Banco de Dados ou a aplicação no docker reinicialize, finalize os containers com o seguinte comando:
+
+### `docker-compose down`
+
 ## Teste e Verificação:
 Você pode agora testar seu projeto rodando os testes:
 ### `npm test`

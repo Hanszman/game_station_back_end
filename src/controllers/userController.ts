@@ -17,6 +17,7 @@ const readUser = async (req: Request, res: Response): Promise<void> => {
     });
 }
 
+// TODO: Verificar funcionamento das funções de CRUD abaixo com o postman:
 const createUser = async (req: Request, res: Response): Promise<void> => {
     return handleEndpoint(req, res, async (req) => {
         const bodyData = req?.body;
