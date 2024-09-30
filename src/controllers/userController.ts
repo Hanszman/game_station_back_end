@@ -1,14 +1,13 @@
 import { Request, Response } from 'express';
 import handleEndpoint from '../utils/handleEndpoint';
 import UserModel from '../models/userModel';
-import QueryOptions from '../utils/classes/QueryOptions';
+// import QueryOptions from '../utils/classes/QueryOptions';
 
 const readUser = async (req: Request, res: Response): Promise<void> => {
     return handleEndpoint(req, res, async (req) => {
         const id = req?.params?.id;
         // const queryParams = req?.query; // TODO: utilizar para filtrar e ordenar dados, além de fazer joins das tabelas
-        const queryOptions = new QueryOptions<UserModel>();
-        console.log('queryOptions', queryOptions);
+        // const queryOptions = new QueryOptions<UserModel>();
         if (id) {
             return await UserModel.findByPk(id);
         } else {
@@ -17,7 +16,6 @@ const readUser = async (req: Request, res: Response): Promise<void> => {
     });
 }
 
-// TODO: Verificar funcionamento das funções de CRUD abaixo com o postman:
 const createUser = async (req: Request, res: Response): Promise<void> => {
     return handleEndpoint(req, res, async (req) => {
         const bodyData = req?.body;

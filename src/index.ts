@@ -7,6 +7,7 @@ import { Server } from 'socket.io';
 
 const app = express();
 app.use(cors());
+app.use(express.json());
 dotenv.config();
 const port = process.env.PORT || 3001;
 const host = process.env.HOST || 'http://localhost';

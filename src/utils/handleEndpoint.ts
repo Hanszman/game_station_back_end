@@ -9,9 +9,13 @@ const handleEndpoint = async (
     let status: number = 200;
     let error: boolean = false;
     let message: string = 'Success!';
-    // TODO: Arrumar o tratamento de mensagem
     try {
         result = await callback(req);
+        if (!result) {
+            status = 400;
+            error = true;
+            message = 'Bad Request!';
+        }
     } catch (err: any) {
         result = null;
         status = 500;

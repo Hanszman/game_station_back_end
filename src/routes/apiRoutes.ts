@@ -1,5 +1,4 @@
-import express, { Request, Response } from 'express';
-import sequelize from '../database/db';
+import express from 'express';
 import generalController from '../controllers/generalController';
 import loginController from '../controllers/loginController';
 import userController from '../controllers/userController';
@@ -16,9 +15,9 @@ router.post('/login', loginController.loginAuth);
 router.post('/user', userController.createUser);
 
 // PUT
-router.put('/user', userController.updateUser);
+router.put('/user/:id', userController.updateUser);
 
 // DELETE
-router.delete('/user', userController.deleteUser);
+router.delete('/user/:id', userController.deleteUser);
 
 export default router;
