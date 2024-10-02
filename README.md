@@ -20,13 +20,14 @@ Execute o comando no terminal:
 Execute os comandos no terminal:
 ### `npm install express`
 ### `npm install typescript ts-node @types/node @types/express`
-### `npm install jest ts-jest @types/jest`
+### `npm install jest ts-jest @types/jest mocha @types/mocha`
 ### `npm install mysql2` ou `npm install mysql`
 ### `npm install nodemon`
 ### `npm install dotenv`
 ### `npm install sequelize sequelize-typescript @types/sequelize`
+### `npm install bcryptjs @types/bcryptjs`
 ou
-### `npm install express jest ts-jest typescript ts-node @types/node @types/express @types/jest nodemon dotenv mysql2 sequelize sequelize-typescript @types/sequelize`
+### `npm install express jest ts-jest typescript ts-node @types/node @types/express @types/jest @types/mocha mocha nodemon dotenv mysql2 sequelize sequelize-typescript @types/sequelize bcryptjs @types/bcryptjs`
 
 ## Configuração do TypeScript:
 Crie um arquivo tsconfig.json na raiz do seu projeto com a configuração do TypeScript. Por exemplo:
