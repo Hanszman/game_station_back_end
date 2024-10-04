@@ -21,7 +21,7 @@ describe('User Controller', () => {
         jest.clearAllMocks();
     });
     describe('readUser', () => {
-        it('deve retornar todos os usuários', async () => {
+        it('Should return all users', async () => {
             const users = [{ id: 1, name: 'User1' }];
             (UserModel.findAll as jest.Mock).mockResolvedValue(users);
             await userController.readUser(req as Request, res as Response);
@@ -32,7 +32,7 @@ describe('User Controller', () => {
                 message: 'Success!',
             });
         });
-        it('deve retornar um usuário por ID', async () => {
+        it('Should return a user by ID', async () => {
             const user = { id: 1, name: 'User1' };
             req.params = { id: '1' };
             (UserModel.findByPk as jest.Mock).mockResolvedValue(user);
@@ -46,7 +46,7 @@ describe('User Controller', () => {
         });
     });
     describe('createUser', () => {
-        it('deve criar um novo usuário com hash de senha', async () => {
+        it('Must create a new user with password hash', async () => {
             const user = {
                 id: 1,
                 name: 'User1',
@@ -72,7 +72,7 @@ describe('User Controller', () => {
         });
     });
     describe('updateUser', () => {
-        it('deve atualizar um usuário com senha correta', async () => {
+        it('Must update a user with correct password', async () => {
             const user = {
                 id: 1,
                 username: 'user1',
@@ -113,7 +113,7 @@ describe('User Controller', () => {
                 message: 'Success!',
             });
         });
-        it('deve retornar null se o usuário ou a senha antiga estiver incorreta', async () => {
+        it('Should return null if the old username or password is incorrect', async () => {
             const user = {
                 id: 1,
                 username: 'user1',
@@ -136,7 +136,7 @@ describe('User Controller', () => {
         });
     });
     describe('deleteUser', () => {
-        it('deve deletar um usuário pelo ID', async () => {
+        it('Must delete a user by ID', async () => {
             const user = { id: 1, name: 'User1', destroy: jest.fn().mockResolvedValue(true) };
             req.params = { id: '1' };
             (UserModel.findByPk as jest.Mock).mockResolvedValue(user);
@@ -149,7 +149,7 @@ describe('User Controller', () => {
                 message: 'Success!',
             });
         });
-        it('deve retornar null se o usuário não for encontrado', async () => {
+        it('Should return null if the user is not found', async () => {
             req.params = { id: '1' };
             (UserModel.findByPk as jest.Mock).mockResolvedValue(null);
             await userController.deleteUser(req as Request, res as Response);
