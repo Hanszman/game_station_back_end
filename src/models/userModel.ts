@@ -1,5 +1,6 @@
 import { DataTypes, Model } from 'sequelize';
 import sequelize from '../database/db';
+import UserGameModel from './userGameModel';
 
 class UserModel extends Model {
   public id!: number;
@@ -46,5 +47,7 @@ UserModel.init(
     timestamps: false,
   }
 );
+
+UserModel.hasMany(UserGameModel, { foreignKey: 'user_id', onDelete: 'CASCADE' });
 
 export default UserModel;

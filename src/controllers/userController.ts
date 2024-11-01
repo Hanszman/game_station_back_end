@@ -56,7 +56,6 @@ const deleteUser = async (req: Request, res: Response): Promise<void> => {
     return handleEndpoint(req, res, async (req) => {
         const id = req?.params?.id;
         if (id) {
-            // TODO: CASCADE: delete all user's in other tables
             const user = await UserModel.findByPk(id);
             if (user) {
                 return await user.destroy();
