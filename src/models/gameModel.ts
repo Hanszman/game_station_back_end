@@ -33,6 +33,4 @@ GameModel.init(
     }
 );
 
-GameModel.hasMany(UserGameModel, { foreignKey: 'game_id', onDelete: 'CASCADE' });
-
 export default GameModel;

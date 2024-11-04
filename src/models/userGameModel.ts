@@ -66,9 +66,4 @@ UserGameModel.init(
     }
 );
 
-UserModel.hasMany(UserGameModel, { foreignKey: 'user_id', as: 'games' });
-GameModel.hasMany(UserGameModel, { foreignKey: 'game_id', as: 'users' });
-UserGameModel.belongsTo(UserModel, { foreignKey: 'user_id', as: 'user' });
-UserGameModel.belongsTo(GameModel, { foreignKey: 'game_id', as: 'game' });
-
 export default UserGameModel;

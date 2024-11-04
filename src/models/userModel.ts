@@ -48,6 +48,4 @@ UserModel.init(
   }
 );
 
-UserModel.hasMany(UserGameModel, { foreignKey: 'user_id', onDelete: 'CASCADE' });
-
 export default UserModel;

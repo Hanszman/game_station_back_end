@@ -4,6 +4,7 @@ import http from 'http';
 import dotenv from 'dotenv';
 import router from './routes/apiRoutes';
 import { Server } from 'socket.io';
+import './models/initializeModels';
 
 const app = express();
 app.use(cors());
