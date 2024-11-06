@@ -5,4 +5,6 @@ INSERT INTO gamestationdb.user (username, password, email, name, lastname) VALUE
 INSERT INTO gamestationdb.user (username, password, email, name, lastname) VALUES ('rafa', '$2a$10$HhNWyvQ9vWCm6CyDH5EVO.SEP4mOfOlE1uDGiZD6IjbvlbrGHB3Si', 'rafa@gmail.com', 'Rafaela', 'Hanszman');
 
 -- Game:
-INSERT INTO gamestationdb.game (name, genre) VALUES ('TicTacToe', 'Puzzle');
+INSERT INTO gamestationdb.game (name, genre) VALUES ('TicTacToe', 'Strategy');
+INSERT INTO gamestationdb.game (name, genre) VALUES ('RockPaperScissors', 'Strategy');
+INSERT INTO gamestationdb.game (name, genre) VALUES ('EndlessRunner', 'Arcade');
